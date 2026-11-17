@@ -1,0 +1,48 @@
+# SharkSMP-Auction configuration
+
+auction:
+  # Max number of active listings per player
+  max-listings-per-player: 5
+
+  # Listing duration in hours
+  default-duration-hours: 24
+  max-duration-hours: 72
+
+  # Minimum and maximum starting price
+  min-price: 1.0
+  max-price: 1000000.0
+
+  # Minimum amount a new bid must exceed the current bid by
+  min-bid-increment: 1.0
+
+  # Fee taken from the seller when an item sells (percent)
+  sales-tax-percent: 5.0
+
+  # Fee charged to list an item (flat amount)
+  listing-fee: 0.0
+
+  # Anti-sniping: extend the auction if a bid arrives near the end
+  anti-snipe:
+    enabled: true
+    trigger-seconds: 30
+    extend-seconds: 30
+
+gui:
+  title: "&b&lShark Auction House"
+  rows: 6
+  items-per-page: 45
+
+messages:
+  prefix: "&8[&bSharkAuction&8] &7"
+  listing-created: "&aYour item has been listed for &e{price}&a."
+  listing-sold: "&aYour item sold to &e{buyer} &afor &e{price}&a."
+  outbid: "&cYou were outbid on &e{item}&c. New bid: &e{price}"
+  no-permission: "&cYou don't have permission to do that."
+  not-enough-money: "&cYou don't have enough money."
+  listing-limit: "&cYou have reached your listing limit."
+
+# Items that can't be listed (Bukkit material names)
+blacklist:
+  - BEDROCK
+  - BARRIER
+  - COMMAND_BLOCK
